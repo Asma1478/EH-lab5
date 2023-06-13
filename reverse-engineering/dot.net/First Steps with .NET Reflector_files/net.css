@@ -1,0 +1,206 @@
+/* Simple Talk .Net Section styles */
+.codeforeground {
+	background-color:#E8DFDF;
+}
+
+.authorpanel {
+	margin:10px;
+	padding:5px 10px 5px 10px;
+	background-color:#E8DFDF;
+	color:#333333;
+	font-size:75%;}
+
+.authorpanel .authorpicture {margin:10px 10px 0px 0px;}
+
+div.rating {
+	margin:10px;
+	padding:5px 10px 5px 10px;
+	background-color:#E8DFDF;
+	color:#333333;
+	font-size:75%;}
+
+.navitem {padding:4px 0px 4px 22px;}
+
+td img.lines {margin:0px 0px 0px 14px;}
+
+PRE, pre {background-color:#E8DFDF;}
+
+/* forum styles */
+
+hr {color:#7B4B4A;}
+
+.comments {margin:10px 0px 10px 0px;}
+
+.haveyoursayheader {
+	background-color:#7B4B4A;
+	color:#E8DFDF;
+	margin:10px;
+	padding:10px;
+	font-size:80%;}
+
+.haveyoursayheader .title {
+	font-size:160%;
+	font-family:"times new roman", times, serif;}
+
+.forumview {margin:0px 10px 0px 10px;}
+
+
+
+.CommonMessageError {
+	margin-top: 8px;
+	margin-bottom: 8px;
+	padding: 4px;
+	font-family: Arial, Verdana, Sans-serif;
+	font-size: 100%;
+	color: #443333;
+	font-weight: bold;
+	border: solid;
+	border-width: 1px;
+	border-color: #7B4B4A;
+	background-color: #E8DFDF;}
+
+.CommonImageTextButton {
+	display: inline-table;
+	display: -moz-inline-box;
+	display: inline-block;
+	padding: 4px;
+	margin: 1px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #7B4B4A;
+	border-top-color: #7B4B4A;
+	border-left-color: #7B4B4A;
+	background-color: #E8DFDF;
+	color: #333333;
+	font-family: Arial, Verdana, Sans-serif;
+	font-size: 80%;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	background-position: 1px 1px;
+	padding-left: 22px;
+	line-height: normal;
+	white-space: nowrap;}
+
+.CommonListTitle {
+	padding: 6px;
+	padding-left: 8px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #7B4B4A;
+	background-color: #E8DFDF; /* was #e2eecd */
+	color: #7B4B4A;
+	font-family: Arial, Verdana, Sans-serif;
+	font-size: 90%;
+	font-weight: bold;
+	margin: 5px 0px 10px 0px;}
+
+
+.CommonListHeaderLeftMost {
+	text-align: center;
+	padding: 4px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #E8DFDF;
+	background-color: #E8DFDF;
+	color: #666666;
+	font-family: Arial, Verdana, Sans-serif;
+	font-size: 80%;
+	font-weight: bold;}
+
+.CommonListHeader {
+	text-align: center;
+	padding: 4px;
+	border-style: solid;
+	border-width: 1px;
+	border-left-width: 0px;
+	border-color: #E8DFDF;
+	background-color: #E8DFDF;
+	color: #666666;
+	font-family: Arial, Verdana, Sans-serif;
+	font-size: 80%;
+	font-weight: bold;}
+
+.CommonListCellLeftMost{
+	padding: 4px;
+	border-style: solid;
+	border-width: 1px;
+	border-top-width: 0px;
+	border-color: #E8DFDF;
+	color: #7B4B4A;
+	font-family: Arial, Verdana, Sans-serif;
+	font-size: 80%;}
+
+.CommonListCell{
+	padding: 4px;
+	border-style: solid;
+	border-width: 1px;
+	border-top-width: 0px;
+	border-left-width: 0px;
+	border-color: #E8DFDF;
+	color: #7B4B4A;
+	font-family: Arial, Verdana, Sans-serif;
+	font-size: 80%;
+	text-align: left;}
+
+.ForumListCellLeftMostImageOnly
+{
+	padding: 4px;
+	border-style: solid;
+	border-width: 1px;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-color: #E8DFDF;
+	color: #7B4B4A;
+	font-family: Arial, Verdana, Sans-serif;
+	width: 20px;}
+
+
+/* new layout */
+
+.site-header, .pagefooter {
+    background-color: #7B4B4A;
+}
+
+.mainnav a:hover {
+    border-bottom-color: #BDA5A5;
+}
+
+.mainnav a.on {
+    color: #7B4B4A;
+    border-bottom-color: #7B4B4A;
+}
+
+.article-listing .summary h2 a {
+    color: #7B4B4A;
+}
+
+.widget-new h2,
+.widget-new h2 a,
+.widget-new a {
+    color: #7B4B4A;
+}
+
+.btn {
+    background-color: #E3DEDE;
+    border-color: #7B4B4A;
+}
+
+.btn:hover {
+    background-color: #D7CDCE;
+}
+
+.dl-menuwrapper button:hover,
+.dl-menuwrapper button.dl-active,
+.dl-menuwrapper button {
+	background:  #7B4B4A;
+}
+.dl-menuwrapper ul {
+	background:  #7B4B4A;
+}
+.sb-icon-search {
+	background: #7B4B4A;
+}
+.sb-search.sb-search-open .sb-icon-search,
+.no-js .sb-search .sb-icon-search {
+	background: #7B4B4A;
+}

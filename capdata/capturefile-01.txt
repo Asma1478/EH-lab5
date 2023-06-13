@@ -1,0 +1,7 @@
+
+BSSID, First time seen, Last time seen, channel, Speed, Privacy, Cipher, Authentication, Power, # beacons, # IV, LAN IP, ID-length, ESSID, Key
+00:18:39:D4:08:99, 2008-01-31 01:49:22, 2008-01-31 01:53:14, 11,  48, WEP , WEP, OPN,  32,     2219,    51682,   0.  0.  0.  0,   7, linksys, 
+
+Station MAC, First time seen, Last time seen, Power, # packets, BSSID, Probed ESSIDs
+00:0E:35:BC:52:72, 2008-01-31 01:49:38, 2008-01-31 01:53:14,  33,    70792, 00:18:39:D4:08:99,
+

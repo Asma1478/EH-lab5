@@ -1,0 +1,916 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0078)https://www.simple-talk.com/dotnet/.net-tools/first-steps-with-.net-reflector/ -->
+<html lang="en-us" xmlns="http://www.w3.org/1999/xhtml" class=" js no-touch cssanimations csstransitions"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="./First Steps with .NET Reflector_files/shares.json"></script><script src="./First Steps with .NET Reflector_files/cb=gapi.loaded_1" async=""></script><script src="./First Steps with .NET Reflector_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" src="./First Steps with .NET Reflector_files/counter020.js"></script><script type="text/javascript" src="./First Steps with .NET Reflector_files/plusone.js" gapi_processed="true"></script><script type="text/javascript" src="./First Steps with .NET Reflector_files/menu173.js"></script><meta http-equiv="content-language" content="en-us"><meta name="viewport" content="width=device_display, initial-scale=1.0"><meta name="msvalidate.01" content="9C05A0BBFB5A166A5C1C7202D4E5D72B">
+    <script type="text/javascript" async="" src="./First Steps with .NET Reflector_files/dc.js"></script><script id="hs-analytics" src="./First Steps with .NET Reflector_files/305265.js"></script><script type="text/javascript" data-main="/static/versioned/3e62335f7e28118064c631b9a3a32e46/js/main.js" src="./First Steps with .NET Reflector_files/require-2.1.9.js"></script>
+    <script>
+      require.config({
+        paths: {
+          "jquery": "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min",
+          "mediaelement": "lib/mediaelement/mediaelement-and-player"
+        },
+        urlArgs: "v=105"
+      });
+    </script>
+    <!-- Start of Async HubSpot Analytics Code --> 
+    <script type="text/javascript">
+        (function (d, s, i, r) {
+            if (d.getElementById(i)) { return; }
+            var n = d.createElement(s), e = d.getElementsByTagName(s)[0];
+            n.id = i; n.src = '//js.hs-analytics.net/analytics/' + (Math.ceil(new Date() / r) * r) + '/305265.js';
+            e.parentNode.insertBefore(n, e);
+        })(document, "script", "hs-analytics", 300000); 
+    </script> 
+    <!-- End of Async HubSpot Analytics Code -->
+
+    <script type="text/javascript" src="./First Steps with .NET Reflector_files/modernizr.custom.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./First Steps with .NET Reflector_files/main.css">
+    <link rel="stylesheet" type="text/css" href="./First Steps with .NET Reflector_files/content.css">
+    <link rel="stylesheet" type="text/css" href="./First Steps with .NET Reflector_files/mobile-navigation.css">
+    <link rel="stylesheet" type="text/css" href="./First Steps with .NET Reflector_files/mobile-searchbar.css">
+
+    
+      <link rel="stylesheet" href="./First Steps with .NET Reflector_files/net.css" type="text/css">
+    
+    <!--[if lt IE 9]>
+      <script src="/static/versioned/c42155be65838a3ecf77bfc6caf1ee7f/js/lib/html5shiv-printshiv.js"></script>
+    <![endif]-->
+
+    
+    
+  <meta name="description" content="If you are new to using .NET Reflector, or you are wondering whether it would be useful to you, you&#39;ll appreciate Jason Crease&#39;s quick run through of the basic functionality.  This is also available as a video.
+">
+  <meta keywords="">
+  <meta itemprop="interactionCount" content="UserComments:1">
+  <link rel="canonical" href="./First Steps with .NET Reflector_files/First Steps with .NET Reflector.html">
+<title>
+	First Steps with .NET Reflector
+</title><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="main" src="./First Steps with .NET Reflector_files/main.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery" src="./First Steps with .NET Reflector_files/jquery.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery.dlmenu" src="./First Steps with .NET Reflector_files/jquery.dlmenu.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="rss" src="./First Steps with .NET Reflector_files/rss.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="corner-peel" src="./First Steps with .NET Reflector_files/corner-peel.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ajax-comment-delete" src="./First Steps with .NET Reflector_files/ajax-comment-delete.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="audio-polyfill" src="./First Steps with .NET Reflector_files/audio-polyfill.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="newsletter-subscriber" src="./First Steps with .NET Reflector_files/newsletter-subscriber.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="analytics" src="./First Steps with .NET Reflector_files/analytics.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mobile-searchbar" src="./First Steps with .NET Reflector_files/mobile-searchbar.js"></script><script type="text/javascript" async="" src="./First Steps with .NET Reflector_files/addthis_widget.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mediaelement" src="./First Steps with .NET Reflector_files/mediaelement-and-player.js"></script><link rel="stylesheet" type="text/css" href="./First Steps with .NET Reflector_files/widget014.top.svg.css" media="all"><link rel="stylesheet" type="text/css" href="./First Steps with .NET Reflector_files/counter015.css" media="all"></head>
+<body>
+  <div id="corner-peel">
+	  <a href="http://www.red-gate.com/sqlmonitor-simpletalk?__hstc=81186632.97181da5c24da50638a0380e1cf1713a.1423585373633.1423585373633.1423585373633.1&__hssc=81186632.1.1423585373634&__hsfp=1958534040" rel="nofollow">
+      <img src="./First Steps with .NET Reflector_files/corner-peel.png" alt="Click here to monitor SSC">
+    </a>
+	  <div id="corner-peel-behind"></div>
+  </div>
+
+  <div class="site">
+    <div itemscope="" itemtype="http://schema.org/TechArticle" class="page"> 
+      
+
+<div class="site-header">
+  <div class="mobile-navigation" style="float: left; padding-top: 13px;">
+    
+	  <div class="mobile-navigation-column">
+    <div id="dl-menu" class="dl-menuwrapper">
+		  <button class="dl-trigger">Open Menu</button>
+		  <ul class="dl-menu">
+			  <li>
+				  <a href="https://www.simple-talk.com/">Home</a>
+        </li>
+        <li>
+          <a href="">SQL</a>
+				  <ul class="dl-submenu">
+					  <li><a href="https://www.simple-talk.com/sql/">SQL Home</a></li>
+					  <li><a href="https://www.simple-talk.com/sql/learn-sql-server/">Learn SQL Server</a></li>
+					  <li><a href="https://www.simple-talk.com/sql/sql-training/">SQL Training</a></li>
+					  <li><a href="https://www.simple-talk.com/sql/database-administration/">Database Administration</a></li>
+            <li><a href="https://www.simple-talk.com/sql/t-sql-programming/">T-SQL Programming</a></li>
+            <li><a href="https://www.simple-talk.com/sql/performance/">Performance</a></li>
+            <li><a href="https://www.simple-talk.com/sql/backup-and-recovery/">Backup and Recovery</a></li>
+            <li><a href="https://www.simple-talk.com/sql/sql-tools/">SQL Tools</a></li>
+            <li><a href="https://www.simple-talk.com/sql/editors-corner">Editor's Corner</a></li>
+            <li><a href="https://www.simple-talk.com/sql/ssis/">SSIS</a></li>
+            <li><a href="https://www.simple-talk.com/sql/reporting-services">Reporting Services</a></li>
+				  </ul>
+			  </li>
+			  <li>
+				  <a href="">.NET</a>
+          <ul class="dl-submenu">
+            <li><a href="https://www.simple-talk.com/dotnet/">.NET Home</a></li>
+					  <li><a href="https://www.simple-talk.com/dotnet/asp.net/">ASP.Net</a></li>
+					  <li><a href="https://www.simple-talk.com/dotnet/windows-forms/">Windows Forms</a></li>
+            <li><a href="https://www.simple-talk.com/dotnet/.net-framework/">.Net Framework</a></li>
+            <li><a href="https://www.simple-talk.com/dotnet/performance/">Performance</a></li>
+            <li><a href="https://www.simple-talk.com/dotnet/visual-studio/">Visual Studio</a></li>
+            <li><a href="https://www.simple-talk.com/dotnet/.net-tools/">.Net Tools</a></li>
+            <li><a href="https://www.simple-talk.com/dotnet/editors-corner/">Editor's Corner</a></li>
+				  </ul>
+			  </li>
+			  <li>
+				  <a href="">Cloud</a>
+          <ul class="dl-submenu">
+					  <li><a href="https://www.simple-talk.com/cloud/">Cloud Home</a></li>
+					  <li><a href="https://www.simple-talk.com/cloud/cloud-data/">Cloud Data</a></li>
+					  <li><a href="https://www.simple-talk.com/cloud/platform-as-a-service/">Platform as a Service</a></li>
+            <li><a href="https://www.simple-talk.com/cloud/development/">Development</a></li>
+            <li><a href="https://www.simple-talk.com/cloud/infrastructure-as-a-service/">Infrastructure as a Service</a></li>
+            <li><a href="https://www.simple-talk.com/cloud/security-and-compliance/">Security and Compliance</a></li>
+            <li><a href="https://www.simple-talk.com/cloud/data-science/">Data Science</a></li>
+            <li><a href="https://www.simple-talk.com/cloud/software-as-a-service/">Software as a Service</a></li>
+				  </ul>
+			  </li>
+			  <li>
+				  <a href="">SysAdmin</a>
+          <ul class="dl-submenu">
+            <li><a href="https://www.simple-talk.com/sysadmin/">SysAdmin Home</a></li>
+					  <li><a href="https://www.simple-talk.com/sysadmin/editors-corner/">Editor's Corner</a></li>
+					  <li><a href="https://www.simple-talk.com/sysadmin/exchange/">Exchange</a></li>
+            <li><a href="https://www.simple-talk.com/sysadmin/general/">General</a></li>
+            <li><a href="https://www.simple-talk.com/sysadmin/virtualization/">Virtualization</a></li>
+            <li><a href="https://www.simple-talk.com/sysadmin/unified-messaging/">Unified Messaging</a></li>
+            <li><a href="https://www.simple-talk.com/sysadmin/powershell/">Powershell</a></li>
+				  </ul>
+			  </li>
+        <li>
+          <a href="https://www.simple-talk.com/opinion/">Opinion</a>
+        </li>
+        <li>
+				  <a href="">Books</a>
+          <ul class="dl-submenu">
+            <li><a href="https://www.simple-talk.com/books/">Books Home</a></li>
+					  <li><a href="https://www.simple-talk.com/books/.net-books/">.Net Books</a></li>
+					  <li><a href="https://www.simple-talk.com/books/sql-books/">SQL Books</a></li>
+            <li><a href="https://www.simple-talk.com/books/sysadmin-books/">SysAdmin Books</a></li>
+            <li><a href="https://www.simple-talk.com/books/book-reviews/">Book Reviews</a></li>
+				  </ul>
+			  </li>
+        <li>
+				  <a href="https://www.simple-talk.com/blogs/">Blogs</a>
+        </li>
+        <li>
+				  <a href="https://www.simple-talk.com/community/forums/">Forums</a>
+        </li>
+		  </ul>
+	  </div><!-- /dl-menuwrapper -->
+    </div>
+<script type="text/javascript">
+  require(["jquery", "jquery.dlmenu"], function ($) {
+      $(document).ready(function() {
+          $('#dl-menu').dlmenu({
+              animationClasses: { classin: 'dl-animate-in-2', classout: 'dl-animate-out-2' }
+          });
+      });
+  });
+</script>
+  </div>
+  <div class="site-logo">
+    <a href="https://www.simple-talk.com/">
+      <img src="./First Steps with .NET Reflector_files/simple-talk-logo.png" class="simple-talk-logo-image" alt="Simple-Talk">
+    </a>
+  </div>
+        
+  <div class="site-tagline">
+    A technical journal and community hub from Redgate
+  </div>
+
+	<div class="red-gate-logo">
+	  <a href="http://www.red-gate.com/?utm_source=simpletalk&utm_medium=textad&utm_campaign=homepage&__hstc=81186632.97181da5c24da50638a0380e1cf1713a.1423585373633.1423585373633.1423585373633.1&__hssc=81186632.1.1423585373634&__hsfp=1958534040">
+	  	<img src="./First Steps with .NET Reflector_files/red-gate-logo.png" class="red-gate-logo-header-image" alt="Redgate">
+	  </a>
+	</div>
+  <div class="signup-buttons">
+    
+  <div class="account-nav account-nav-anonymous">
+      <a href="https://www.simple-talk.com/community/user/CreateUser.aspx?ReturnUrl=%2fdotnet%2f.net-tools%2ffirst-steps-with-.net-reflector%2f">Join Simple-Talk</a>
+      <a href="https://www.simple-talk.com/community/login.aspx?ReturnUrl=%2fdotnet%2f.net-tools%2ffirst-steps-with-.net-reflector%2f">Sign in</a>
+  </div>
+
+  </div>
+  <br>
+  <div class="mobile-search">
+    
+<div class="mobile-searchbar-column">
+	<div id="sb-search" class="sb-search">
+		<input class="sb-search-input" placeholder="Search..." type="text" value="" name="search" id="search">
+		<input class="sb-search-submit" type="submit" value="">
+		<span class="sb-icon-search"><img src="./First Steps with .NET Reflector_files/search_white.png" style="height: 25px;" alt="Search"></span>
+	</div>
+</div>  
+  </div>
+</div>
+
+      
+
+<div class="mainnav nav">
+  <ul class="primarynav">
+    
+      <li>
+        <a href="https://www.simple-talk.com/">Home</a>
+      </li>
+    
+      <li>
+        <a href="https://www.simple-talk.com/sql/">SQL</a>
+      </li>
+    
+      <li>
+        <a href="https://www.simple-talk.com/dotnet/" class="on">.NET</a>
+      </li>
+    
+      <li>
+        <a href="https://www.simple-talk.com/cloud/">Cloud</a>
+      </li>
+    
+      <li>
+        <a href="https://www.simple-talk.com/sysadmin/">SysAdmin</a>
+      </li>
+    
+      <li>
+        <a href="https://www.simple-talk.com/opinion/">Opinion</a>
+      </li>
+    
+      <li>
+        <a href="https://www.simple-talk.com/books/">Books</a>
+      </li>
+    
+      <li>
+        <a href="https://www.simple-talk.com/blogs/">Blogs</a>
+      </li>
+    
+      <li>
+        <a href="https://www.simple-talk.com/community/forums/">Forums</a>
+      </li>
+    
+  </ul>
+  <div class="site-search">
+    
+      <form action="https://www.simple-talk.com/search/" method="get">
+    
+			  <input type="text" name="search" placeholder="Search…">
+        <button type="submit" class="search-button">
+          <img src="./First Steps with .NET Reflector_files/search.png" alt="Search">
+        </button>
+		
+      </form>
+    
+  </div>
+</div>
+  
+<div class="subnav nav">
+  <ul>
+    
+        <li>
+          <a id="ctl00_Navigation1_repSubMenu_ctl00_lnkItem" href="https://www.simple-talk.com/dotnet/"><span itemprop="articleSection">.NET Home</span></a>
+        </li>
+      
+        <li>
+          <a id="ctl00_Navigation1_repSubMenu_ctl01_lnkItem" href="https://www.simple-talk.com/dotnet/.net-tools/"><span itemprop="articleSection">.Net Tools</span></a>
+        </li>
+      
+        <li>
+          <span class="inactive-link ">First Steps with .NET Reflector</span>
+        </li>
+      
+  </ul>
+</div>
+      <div class="maincontent">
+        
+  <div class="article">
+  
+    <div id="ctl00_MainContent_panSummary" class="summarybox">
+	
+      <ul>
+        <li>Av rating: <img id="ctl00_MainContent_imgRating1" src="./First Steps with .NET Reflector_files/icon_plain_4stars.gif" style="height:13px;width:70px;border-width:0px;"></li>
+        <li>Total votes: 37</li>
+        <li>Total comments: 1</li>
+      </ul>
+      <ul>
+        <li><img id="ctl00_MainContent_imgEmail" src="./First Steps with .NET Reflector_files/icon_email_13x11.gif" style="height:11px;width:14px;border-width:0px;">&nbsp;<a id="ctl00_MainContent_lnkEmail" href="https://www.simple-talk.com/content/email.aspx?article=602">send to a friend</a></li>
+		    <li><img id="ctl00_MainContent_imgPrint" src="./First Steps with .NET Reflector_files/icon_print_13x11.gif" style="height:11px;width:14px;border-width:0px;">&nbsp;<a id="ctl00_MainContent_lnkPrint" href="https://www.simple-talk.com/content/print.aspx?article=602" target="_blank">printer friendly version</a></li>
+      </ul>
+      <ul>
+        <li>
+          
+        </li>
+      </ul>
+	
+</div>
+
+    <div class="article-header">
+      <img id="ctl00_MainContent_imgAuthor" class="authorpicture" align="left" itemprop="image" src="./First Steps with .NET Reflector_files/135.gif" alt="Jason Crease" style="border-width:0px;">
+      <h1 class="articletitle">First Steps with .NET Reflector</h1>
+      <div class="date">17 November 2008</div>
+      <div class="author">by <a id="ctl00_MainContent_lnkAuthor" rel="author" href="https://www.simple-talk.com/author/jason-crease/"><span itemprop="author">Jason Crease</span></a></div>
+    </div>
+    <div class="clear"></div>
+    
+    <div itemprop="articleBody">
+
+    
+<style>#pretty {
+	
+}
+DIV.leftpic {
+	FONT-WEIGHT: bold; FLOAT: left; PADDING-BOTTOM: 20px; MARGIN: 0px 10px 0px 0px; TEXT-ALIGN: center
+}
+DIV.rightpic {
+	FONT-WEIGHT: bold; FLOAT: right; PADDING-BOTTOM: 20px; MARGIN: 0px 0px 0px 10px; TEXT-ALIGN: center
+}
+DIV.centrepic {
+	FONT-WEIGHT: bold; PADDING-BOTTOM: 20px; MARGIN: 0px 0px 0px 10px; TEXT-ALIGN: center
+}
+#pretty P.pullout {
+	BORDER-RIGHT: #706573 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #786d7d 1px solid; PADDING-LEFT: 10px; FLOAT: right; PADDING-BOTTOM: 10px; MARGIN-LEFT: 10px; BORDER-LEFT: #766b7b 1px solid; WIDTH: 350px; MARGIN-RIGHT: 0px; PADDING-TOP: 10px; BORDER-BOTTOM: blue 1px solid; BACKGROUND-COLOR: #fbfbfd; TEXT-ALIGN: left
+}
+#pretty P.start:first-letter {
+	FONT-SIZE: 280%; FLOAT: left; LINE-HEIGHT: 100%
+}
+#pretty P.note {
+	BORDER-RIGHT: silver 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: silver 1px solid; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; MARGIN-LEFT: 80px; BORDER-LEFT: silver 1px solid; PADDING-TOP: 10px; BORDER-BOTTOM: silver 1px solid; TEXT-ALIGN: left
+}
+#pretty P.quote {
+	BORDER-RIGHT: medium none; PADDING-RIGHT: 0px; BORDER-TOP: silver 2px solid; FONT-WEIGHT: bold; FONT-SIZE: 17px; FLOAT: right; PADDING-BOTTOM: 15px; MARGIN-LEFT: 10px; LINE-HEIGHT: 15px; MARGIN-RIGHT: 10px; PADDING-TOP: 10px; BORDER-BOTTOM: silver 1px solid; TEXT-ALIGN: left
+}
+#pretty P {
+	FONT-SIZE: 12px; MARGIN-LEFT: 20px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-ALIGN: justify
+}
+#pretty DL {
+	FONT-SIZE: 12px; MARGIN-LEFT: 20px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-ALIGN: justify
+}
+#pretty DT {
+	CLEAR: both; MARGIN-TOP: 10px; FONT-WEIGHT: bold; FLOAT: left; WIDTH: 150px
+}
+#pretty DD {
+	MARGIN-TOP: 10px; MARGIN-LEFT: 150px
+}
+#pretty LI {
+	MARGIN-TOP: 0px; FONT-SIZE: 12px; MARGIN-BOTTOM: 3px; MARGIN-LEFT: 20px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-ALIGN: justify
+}
+#pretty PRE {
+	BORDER-RIGHT: silver 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: silver 1px solid; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; MARGIN-LEFT: 0px; BORDER-LEFT: silver 1px solid; PADDING-TOP: 10px; BORDER-BOTTOM: silver 1px solid; BACKGROUND-COLOR: #f5f5f5; TEXT-ALIGN: left
+}
+#pretty DIV.code {
+	BORDER-RIGHT: silver 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: silver 1px solid; PADDING-LEFT: 10px; FONT-SIZE: 12px; PADDING-BOTTOM: 10px; MARGIN-LEFT: 0px; BORDER-LEFT: silver 1px solid; PADDING-TOP: 10px; BORDER-BOTTOM: silver 1px solid; FONT-FAMILY: "Courier New", Courier, monospace; BACKGROUND-COLOR: #f5f5f5; TEXT-ALIGN: left
+}
+#pretty H1 {
+	FONT-SIZE: 145%; MARGIN-LEFT: 0px; FONT-FAMILY: "Times New Roman", Times, serif
+}
+#pretty H2 {
+	FONT-SIZE: 130%; MARGIN-LEFT: 0px; FONT-FAMILY: "Times New Roman", Times, serif
+}
+#pretty H3 {
+	FONT-SIZE: 115%; MARGIN-LEFT: 20px; FONT-FAMILY: "Times New Roman", Times, serif
+}
+#pretty H4 {
+	MARGIN-LEFT: 40px; FONT-FAMILY: "Times New Roman", Times, serif
+}
+#pretty SPAN.codeBlack {
+	COLOR: black
+}
+#pretty TABLE {
+	MARGIN-LEFT: 20px
+}
+#pretty TABLE P {
+	MARGIN-LEFT: 5px; MARGIN-RIGHT: 5px
+}
+#pretty SPAN.codeBlue {
+	COLOR: blue
+}
+#pretty SPAN.codeBrown {
+	COLOR: brown
+}
+#pretty SPAN.codeGray {
+	COLOR: gray
+}
+#pretty SPAN.codeGreen {
+	COLOR: green
+}
+#pretty SPAN.codeMagenta {
+	COLOR: magenta
+}
+#pretty SPAN.codeRed {
+	COLOR: red
+}
+#pretty FIELDSET {
+	BORDER-RIGHT: #cacaca 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #cacaca 1px solid; PADDING-LEFT: 10px; FONT-WEIGHT: normal; FONT-SIZE: 12px; PADDING-BOTTOM: 10px; MARGIN-LEFT: 20px; BORDER-LEFT: #cacaca 1px solid; PADDING-TOP: 10px; BORDER-BOTTOM: #cacaca 1px solid; FONT-FAMILY: "Courier New", Courier, monospace; BACKGROUND-COLOR: #f2f2f2; TEXT-ALIGN: left
+}
+#pretty DIV.listing {
+	BORDER-RIGHT: #cacaca 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #cacaca 1px solid; PADDING-LEFT: 10px; FONT-WEIGHT: normal; FONT-SIZE: 12px; PADDING-BOTTOM: 10px; MARGIN-LEFT: 20px; BORDER-LEFT: #cacaca 1px solid; PADDING-TOP: 10px; BORDER-BOTTOM: #cacaca 1px solid; FONT-FAMILY: "Courier New", Courier, monospace; BACKGROUND-COLOR: #f9f9f9; TEXT-ALIGN: left
+}
+#pretty DIV.listing P {
+	MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; FONT-FAMILY: "Courier New", Courier, monospace; TEXT-ALIGN: left
+}
+#pretty LEGEND {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 14px; PADDING-BOTTOM: 10px; MARGIN-LEFT: 20px; PADDING-TOP: 10px; FONT-FAMILY: "Times New Roman", Times, serif; TEXT-ALIGN: left
+}
+#pretty DIV.indent {
+	MARGIN-LEFT: 20px
+}
+#pretty .indented {
+	MARGIN-LEFT: 80px
+}
+#pretty PRE.inline {
+	MARGIN-LEFT: 20px
+}
+#pretty HR {
+	BORDER-TOP: #d2d2d2 1px dotted; BORDER-BOTTOM: thin
+}
+#pretty DIV.illustration {
+	MARGIN-BOTTOM: 20px; MARGIN-LEFT: 0px; TEXT-ALIGN: center
+}
+#pretty P.illustration {
+	MARGIN-BOTTOM: 0px; MARGIN-LEFT: 0px; TEXT-ALIGN: center
+}
+#pretty P.caption {
+	MARGIN-TOP: 0px; FONT-WEIGHT: bold; FONT-SIZE: 11px; MARGIN-LEFT: 20px; TEXT-ALIGN: left
+}
+.CodeInText {
+	FONT-WEIGHT: bold; FONT-FAMILY: courier new, courier, monospaced
+}
+.ImportantWords {
+	FONT-WEIGHT: bold
+}
+.ScreenText {
+	FONT-FAMILY: Century Gothic, Tahoma, Lucida Sans, sans-serif
+}
+PRE {
+	BACKGROUND-COLOR: #d6d6d6
+}
+.CodeInText {
+	FONT-WEIGHT: bold; FONT-FAMILY: courier new, courier, monospaced
+}
+.ImportantWords {
+	FONT-WEIGHT: bold
+}
+.ScreenText {
+	FONT-FAMILY: Century Gothic, Tahoma, Lucida Sans, sans-serif
+}
+PRE {
+	BACKGROUND-COLOR: #d6d6d6
+}
+.CodeInText {
+	FONT-WEIGHT: bold; FONT-FAMILY: courier new, courier, monospaced
+}
+.ImportantWords {
+	FONT-WEIGHT: bold
+}
+.ScreenText {
+	FONT-FAMILY: Century Gothic, Tahoma, Lucida Sans, sans-serif
+}
+PRE {
+	BACKGROUND-COLOR: #d6d6d6
+}
+.CodeInText {
+	FONT-WEIGHT: bold; FONT-FAMILY: courier new, courier, monospaced
+}
+.ImportantWords {
+	FONT-WEIGHT: bold
+}
+.ScreenText {
+	FONT-FAMILY: Century Gothic, Tahoma, Lucida Sans, sans-serif
+}
+PRE {
+	BACKGROUND-COLOR: #d6d6d6
+}
+.CodeInText {
+	FONT-WEIGHT: bold; FONT-FAMILY: courier new, courier, monospaced
+}
+.ImportantWords {
+	FONT-WEIGHT: bold
+}
+.ScreenText {
+	FONT-FAMILY: Century Gothic, Tahoma, Lucida Sans, sans-serif
+}
+PRE {
+	BACKGROUND-COLOR: #d6d6d6
+}
+.CodeInText {
+	FONT-WEIGHT: bold; FONT-FAMILY: courier new, courier, monospaced
+}
+.ImportantWords {
+	FONT-WEIGHT: bold
+}
+.ScreenText {
+	FONT-FAMILY: Century Gothic, Tahoma, Lucida Sans, sans-serif
+}
+PRE {
+	BACKGROUND-COLOR: #d6d6d6
+}
+.CodeInText {
+	FONT-WEIGHT: bold; FONT-FAMILY: courier new, courier, monospaced
+}
+.ImportantWords {
+	FONT-WEIGHT: bold
+}
+.ScreenText {
+	FONT-FAMILY: Century Gothic, Tahoma, Lucida Sans, sans-serif
+}
+PRE {
+	BACKGROUND-COLOR: #d6d6d6
+}
+</style>
+
+<div id="pretty">
+<p class="note">If you are new to using NET Reflector, or you are wondering whether it would be useful to you, you'll appreciate Jason Crease's quick run through of the basic functionality.&nbsp; This is also available as a video <a href="http://www.red-gate.com/products/reflector/video.htm?__hstc=81186632.97181da5c24da50638a0380e1cf1713a.1423585373633.1423585373633.1423585373633.1&__hssc=81186632.1.1423585373634&__hsfp=1958534040">here</a></p>
+<p>When you first run .NET Reflector, you will be asked pick a version of the NET Framework to populate the assembly list. 
+</p><p><img height="260" src="./First Steps with .NET Reflector_files/602-image000.jpg" width="317" border="0"> 
+</p><p>When you want to browse an assembly, all you will need to do is to run NET Reflector, drag the file from Windows explorer and drop it onto NET Reflector. You can also open and <b>.exe</b>, <b>.dll </b>or <b>.mcl </b>file from the file menu in .NET Reflector. 
+</p><p>Then you can drill down into namespaces, class and functions and down there, you have a bit of information about each of the components – you can see where the assembly is, its name, version, what type of assembly it is…</p>
+<p>Here, we are browsing <b>System.Windows.Forms</b></p>
+<p><img height="766" src="./First Steps with .NET Reflector_files/602-image002.jpg" width="383" border="0"></p>
+<p>The main functionality of .NET Reflector is the disassembler. So let’s say I want to understand what happens during a particular event because something is not behaving the right way, or my app is not behaving as expected. You can drill down to the method of your choice, right-click and choose <b>Disassemble</b>. And there you have it: </p>
+<p></p>
+<p>You may, at this stage, need to choose the version of NET Framework&nbsp; that the assembly was developed with by using the <i>View-&gt;options </i>dialog box. </p>
+<p><img height="325" src="./First Steps with .NET Reflector_files/602-image001.jpg" width="406" border="0"></p>
+<p>you can see the code for that function and see what it does in the Disassembler pane on the right.</p>
+<p><img height="457" src="./First Steps with .NET Reflector_files/602-image005.jpg" width="579" border="0"></p>
+<p>I can choose to view the code in C#, or VB.NET or IL code.</p>
+<p><img height="457" src="./First Steps with .NET Reflector_files/602-image0055.jpg" width="579" border="0"></p><img style="FLOAT: right" height="147" src="./First Steps with .NET Reflector_files/602-OnclickDetail.jpg" width="297" border="0"> 
+<p>The other cool thing you can do with .NET Reflector is navigating the code view. You can browse the source code by clicking on a function name and that’s really useful because you can explore code quickly, and understand what’s happening behind the scenes.</p>
+<p>You can navigate the disassembly view,so if I click here in the onclick method</p>
+<hr style="CLEAR: both; BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; COLOR: white; BORDER-BOTTOM: medium none">
+<img style="CLEAR: right; FLOAT: right" height="103" src="./First Steps with .NET Reflector_files/602-Onclickmethod.jpg" width="290" border="0"> 
+<p>... it will take me to method <b>OnClick</b></p>
+<p style="CLEAR: both">&nbsp;</p>
+<p>Right down there, we can see that we have the ability to Expand Methods. </p>
+<p><img height="601" src="./First Steps with .NET Reflector_files/602-image008.jpg" width="553" border="0"></p>
+<p>When we click on it, it expands and decompiles all the methods in one go.</p>
+<p><img height="601" src="./First Steps with .NET Reflector_files/602-image010.jpg" width="553" border="0"></p>
+<p>The other thing you can do with .NET Reflector, is to Analyze a class or a function, so say we pick the function called OnClick(EventArgs) and we right click and choose the command Analyze, we’ll have the Analyzer come up here on the right and we can see what that function depends on, and see the functions that it uses…so we can see the interaction between the different functions.</p>
+<p><img height="624" src="./First Steps with .NET Reflector_files/602-image012.jpg" width="553" border="0"></p>
+<p>It’s the same principle with a Class. If you pick a class, say Button, you can see the same thing plus, we can also see what the type is exposed by and instantiated by.</p>
+<p><img height="624" src="./First Steps with .NET Reflector_files/602-image014.jpg" width="553" border="0"></p>
+<p>You can also access documentation with .NET Reflector. So if I pick an assembly for which there’s xml documentation available, we can see the documentation for that class or function appearing down on the right. Here we’ll look at a class from ANTS Profiler.</p>
+<p><img height="456" src="./First Steps with .NET Reflector_files/602-image016.jpg" width="553" border="0"></p>
+<p>&nbsp;.NET Reflector also has a search functionality (<i>&lt;View&lt;Search</i>). You can set it so it searches on classes or functions.</p>
+<p><img height="509" src="./First Steps with .NET Reflector_files/602-image018.jpg" width="553" border="0"></p>
+<p class="MsoNormal" style="MARGIN-TOP: 12pt"><span lang="EN-GB">You’ll also note that .NET Reflector lets you access and save resource files.</span></p>
+<p><img height="578" src="./First Steps with .NET Reflector_files/602-image020.jpg" width="554" border="0"></p>
+<p>Finally, one last thing I wanted to show you is the Windows Shell integration. We’ll close Reflector, bring up the command line (run – cmd), we’ll drag the Reflector.exe in here and add “ /register” </p>
+<p><img height="315" src="./First Steps with .NET Reflector_files/602-image022.jpg" width="554" border="0"></p>
+<p>Now if we find a dll and right-click on it, we get a “Browse with .NET Reflector” in the context menu!</p>
+<p><img height="339" src="./First Steps with .NET Reflector_files/602-image024.jpg" width="453" border="0"></p>
+<p>If you press Control Alt C when you have selected an item in an assembly in NET Reflector’s browser, you will have a reference on your clipboard that is just like a URL. If you paste it into any web-page or browser-based page, you can then use the URI as a short-cut to bring that item up in NET Reflector.</p></div>
+    
+    </div>
+
+    
+
+    <div class="content-meta">
+      <div class="share-tools"><div class="addthis_toolbox addthis_default_style"><p>Thank this author by sharing:</p><a class="addthis_button_google_plusone at300b" g:plusone:annotation="none"><div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 24px; height: 15px; background: transparent;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 24px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 15px;" tabindex="0" vspace="0" width="100%" id="I0_1423585374146" name="I0_1423585374146" src="./First Steps with .NET Reflector_files/fastbutton.html" data-gapiattached="true" title="+1"></iframe></div></a><a class="addthis_button_linkedin at300b" href="https://www.addthis.com/bookmark.php?v=300&winname=addthis&pub=ra-4f3bb4c87aeb8915&source=tbx-300&lng=en-us&s=linkedin&url=https%3A%2F%2Fwww.simple-talk.com%2Fdotnet%2F.net-tools%2Ffirst-steps-with-.net-reflector%2F&title=First%20Steps%20with%20.NET%20Reflector&ate=AT-ra-4f3bb4c87aeb8915/-/-/54da305dded7d4ba/2&frommenu=1&uid=54da305de2296b3a&ct=1&tt=0&captcha_provider=nucaptcha" target="_blank" title="LinkedIn"><span class="at4-icon aticon-linkedin" style="background-color: rgb(68, 152, 200);"><span class="at_a11y">Share on linkedin</span></span></a><a class="addthis_button_facebook at300b" title="Facebook" href="https://www.simple-talk.com/dotnet/.net-tools/first-steps-with-.net-reflector/#"><span class="at4-icon aticon-facebook" style="background-color: rgb(48, 88, 145);"><span class="at_a11y">Share on facebook</span></span></a><a class="addthis_button_twitter at300b" title="Tweet" href="https://www.simple-talk.com/dotnet/.net-tools/first-steps-with-.net-reflector/#"><span class="at4-icon aticon-twitter" style="background-color: rgb(44, 168, 210);"><span class="at_a11y">Share on twitter</span></span></a><a class="addthis_counter addthis_bubble_style" href="https://www.simple-talk.com/dotnet/.net-tools/first-steps-with-.net-reflector/#" style="display: inline-block;"><a class="addthis_button_expanded" target="_blank" title="View more services" href="https://www.simple-talk.com/dotnet/.net-tools/first-steps-with-.net-reflector/#">0</a><a class="atc_s addthis_button_compact"><span></span></a></a><div class="atclear"></div></div></div>
+      This article has been viewed 16168 times.
+    </div>
+  </div>
+
+  
+<div class="authorpanel">
+    <a id="ctl00_MainContent_Author1_lnkImage" title="Jason Crease" href="https://www.simple-talk.com/author/jason-crease/"><img id="ctl00_MainContent_Author1_imgAuthor" class="authorpicture" itemprop="image" src="./First Steps with .NET Reflector_files/135.gif" alt="Jason Crease" align="left" style="border-width:0px;"></a>
+    <p><strong>Author profile:</strong> <a id="ctl00_MainContent_Author1_lnkName" href="https://www.simple-talk.com/author/jason-crease/"><span itemprop="author">Jason Crease</span></a></p>
+    <p>Jason Crease studied maths and computer Science at Cambridge University and joined Red-Gate two years ago as a Test Engineer. He specialises in Testing .NET applications and is part of the team responsible for the development of ANTS Profiler and .NET Reflector</p>
+    <p><a id="ctl00_MainContent_Author1_lnkSearch" href="https://www.simple-talk.com/author/jason-crease/">Search for other articles by Jason Crease</a></p>
+    <div class="clear"></div>
+</div>
+  
+
+  <form name="aspnetForm" method="post" action="https://www.simple-talk.com/content/article.aspx?article=602" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUIMjAwMDcyMjNkGAIFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYLBRxjdGwwMCRNYWluQ29udGVudCRyYWRSYXRpbmcxBRxjdGwwMCRNYWluQ29udGVudCRyYWRSYXRpbmcxBRxjdGwwMCRNYWluQ29udGVudCRyYWRSYXRpbmcyBRxjdGwwMCRNYWluQ29udGVudCRyYWRSYXRpbmcyBRxjdGwwMCRNYWluQ29udGVudCRyYWRSYXRpbmczBRxjdGwwMCRNYWluQ29udGVudCRyYWRSYXRpbmczBRxjdGwwMCRNYWluQ29udGVudCRyYWRSYXRpbmc0BRxjdGwwMCRNYWluQ29udGVudCRyYWRSYXRpbmc0BRxjdGwwMCRNYWluQ29udGVudCRyYWRSYXRpbmc1BRxjdGwwMCRNYWluQ29udGVudCRyYWRSYXRpbmc1BSBjdGwwMCRNYWluQ29udGVudCRidG5SYXRlQXJ0aWNsZQURY3RsMDAkTmF2aWdhdGlvbjEPFCsAAmQy7AQAAQAAAP////8BAAAAAAAAAAwCAAAAQVdlYlNpdGUsIFZlcnNpb249MS4zLjAuMTA4MiwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsBAEAAAB7U3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tTaW1wbGVUYWxrLk1lbnVJdGVtLCBXZWJTaXRlLCBWZXJzaW9uPTEuMy4wLjEwODIsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49bnVsbF1dAwAAAAZfaXRlbXMFX3NpemUIX3ZlcnNpb24EAAAVU2ltcGxlVGFsay5NZW51SXRlbVtdAgAAAAgICQMAAAADAAAAAwAAAAcDAAAAAAEAAAAEAAAABBNTaW1wbGVUYWxrLk1lbnVJdGVtAgAAAAkEAAAACQUAAAAJBgAAAAoFBAAAABNTaW1wbGVUYWxrLk1lbnVJdGVtBAAAAAxtX0NoaWxkQ291bnQKbV9TZWxlY3RlZAdtX1RpdGxlBW1fVXJsAAABAQgBAgAAAAAAAAAABgcAAAAJLk5FVCBIb21lBggAAAAjaHR0cHM6Ly93d3cuc2ltcGxlLXRhbGsuY29tL2RvdG5ldC8BBQAAAAQAAAAAAAAAAAYJAAAACi5OZXQgVG9vbHMGCgAAAC5odHRwczovL3d3dy5zaW1wbGUtdGFsay5jb20vZG90bmV0Ly5uZXQtdG9vbHMvAQYAAAAEAAAAAAAAAAAGCwAAAB9GaXJzdCBTdGVwcyB3aXRoIC5ORVQgUmVmbGVjdG9yBgwAAAAAC2Qd+U1G5lx4wjZ9+8NJGv+769ZIhg==">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="./First Steps with .NET Reflector_files/WebResource.axd" type="text/javascript"></script>
+
+
+<script src="./First Steps with .NET Reflector_files/ScriptResource.axd" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="./First Steps with .NET Reflector_files/ScriptResource(1).axd" type="text/javascript"></script>
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$MainContent$ScriptManager1', document.getElementById('aspnetForm'));
+Sys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);
+//]]>
+</script>
+
+    <script language="javascript" type="text/javascript">
+      function EndRequestHandler() {
+        if (theForm._initialAction == undefined)
+          theForm._initialAction = theForm.action;
+        else
+          theForm.action = theForm._initialAction;
+      }
+      if (typeof (Sys) != "undefined") {
+        EndRequestHandler();
+        Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+      }
+    </script>
+    
+  <div id="ctl00_MainContent_panVoting" class="rating">
+	
+    <strong>Rate this article:</strong> &nbsp;&nbsp;Avg rating: <img id="ctl00_MainContent_imgRating2" src="./First Steps with .NET Reflector_files/icon_plain_4stars.gif" style="height:13px;width:70px;border-width:0px;"> from a total of 37 votes.<br><br>
+    <div id="ctl00_MainContent_panToRate">
+		
+        <table border="0" class="rating">
+          <tbody><tr>
+	        <td><input id="ctl00_MainContent_radRating1" type="radio" name="ctl00$MainContent$radRating" value="radRating1"><br>Poor</td>
+	        <td><input id="ctl00_MainContent_radRating2" type="radio" name="ctl00$MainContent$radRating" value="radRating2"><br>OK</td>
+	        <td><input id="ctl00_MainContent_radRating3" type="radio" name="ctl00$MainContent$radRating" value="radRating3"><br>Good</td>
+	        <td><input id="ctl00_MainContent_radRating4" type="radio" name="ctl00$MainContent$radRating" value="radRating4"><br>Great</td>
+	        <td><input id="ctl00_MainContent_radRating5" type="radio" name="ctl00$MainContent$radRating" value="radRating5"><br>Must read</td>
+		    <td>
+		        <input type="image" name="ctl00$MainContent$btnRateArticle" id="ctl00_MainContent_btnRateArticle" title="Rate article" src="./First Steps with .NET Reflector_files/btn_submit.gif" style="height:19px;width:56px;border-width:0px;">
+		    </td>
+	      </tr>
+        </tbody></table>
+    
+	</div>
+    
+    
+  
+</div>
+  
+  <div id="ctl00_MainContent_panComments" class="comments">
+	
+    <div class="haveyoursayheader">
+      <div class="title">Have Your Say</div>
+        Do you have an opinion on this article? Then <a href="https://www.simple-talk.com/dotnet/.net-tools/first-steps-with-.net-reflector/#commentform" class="commentlink"><u>add your comment below</u></a>:
+      </div>
+      <div class="forumview">
+        
+
+<script type="text/javascript" src="./First Steps with .NET Reflector_files/jquery.watermark.js"></script>
+<div id="ctl00_MainContent_ForumView1_panPostingNotAllowed" style="width:100%;">
+	
+    You must be logged in to post to this forum<br><br><a id="ctl00_MainContent_ForumView1_lnkLogin" href="https://www.simple-talk.com/community/login.aspx?ReturnUrl=%2fdotnet%2f.net-tools%2ffirst-steps-with-.net-reflector%2f">Click here to log in</a>.
+
+</div>
+
+
+    <br><hr>
+  
+	<table border="0" cellpadding="0" cellspacing="4" class="commenttable" width="500">
+      <tbody><tr><td class="commenttitle">Subject: </td><td><b><span id="ctl00_MainContent_ForumView1_repPosts_ctl01_lblSubject">Anonymous commenting disabled</span></b></td></tr>
+      <tr><td class="commenttitle">Posted by: </td><td><i><span id="ctl00_MainContent_ForumView1_repPosts_ctl01_lblAuthor">Chris Massey</span></i> (<a id="ctl00_MainContent_ForumView1_repPosts_ctl01_lnkProfile" href="https://www.simple-talk.com/community/user/Profile.aspx?UserID=14442">view profile</a>)</td></tr>
+      <tr><td class="commenttitle">Posted on: </td><td><i><span id="ctl00_MainContent_ForumView1_repPosts_ctl01_lblDate">Friday, January 2, 2009 at 6:56 AM</span></i></td></tr>
+      <tr><td class="commenttitle" valign="top">Message: </td><td><span id="ctl00_MainContent_ForumView1_repPosts_ctl01_lblMessage">Anonymous commented has been disabled on this article, due to spamming. If
+you want to leave a comment, you'll have to sign in or sign up. Sorry
+for any inconvenience.<br></span></td></tr>
+      
+	</tbody></table>
+  
+    <hr>
+  
+
+
+<script type="text/javascript">
+    require(["jquery"], function($) {
+        $('.comment-name').watermark('Name');
+        $('.comment-subject').watermark('Subject');
+        $('.comment-message').watermark('Message');
+    });
+</script>
+        <a name="commentform">&nbsp;</a>
+      </div>
+  
+</div>
+  
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="AC54A3B1">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.initialize();
+//]]>
+</script>
+</form>
+
+      </div> 
+      <div class="rightcolumn">
+        
+  
+
+<div class="widget-new" id="categories">
+  <h2>.NET Categories</h2>
+  <div class="widget-new-body">
+    <ul>
+      
+    	    <li id="ctl00_RightColumn_Categories1_repCategories_ctl00_CategoryListItem">
+  	        <a id="ctl00_RightColumn_Categories1_repCategories_ctl00_lnkCategory" href="https://www.simple-talk.com/dotnet/">.NET Home</a>
+    	    </li>
+        
+    	    <li id="ctl00_RightColumn_Categories1_repCategories_ctl01_CategoryListItem">
+  	        <a id="ctl00_RightColumn_Categories1_repCategories_ctl01_lnkCategory" href="https://www.simple-talk.com/dotnet/asp.net/">ASP.Net</a>
+    	    </li>
+        
+    	    <li id="ctl00_RightColumn_Categories1_repCategories_ctl02_CategoryListItem">
+  	        <a id="ctl00_RightColumn_Categories1_repCategories_ctl02_lnkCategory" href="https://www.simple-talk.com/dotnet/windows-forms/">Windows Forms</a>
+    	    </li>
+        
+    	    <li id="ctl00_RightColumn_Categories1_repCategories_ctl03_CategoryListItem">
+  	        <a id="ctl00_RightColumn_Categories1_repCategories_ctl03_lnkCategory" href="https://www.simple-talk.com/dotnet/.net-framework/">.Net Framework</a>
+    	    </li>
+        
+    	    <li id="ctl00_RightColumn_Categories1_repCategories_ctl04_CategoryListItem">
+  	        <a id="ctl00_RightColumn_Categories1_repCategories_ctl04_lnkCategory" href="https://www.simple-talk.com/dotnet/performance/">Performance</a>
+    	    </li>
+        
+    	    <li id="ctl00_RightColumn_Categories1_repCategories_ctl05_CategoryListItem">
+  	        <a id="ctl00_RightColumn_Categories1_repCategories_ctl05_lnkCategory" href="https://www.simple-talk.com/dotnet/visual-studio/">Visual Studio</a>
+    	    </li>
+        
+    	    <li id="ctl00_RightColumn_Categories1_repCategories_ctl06_CategoryListItem">
+  	        <a id="ctl00_RightColumn_Categories1_repCategories_ctl06_lnkCategory" href="https://www.simple-talk.com/dotnet/.net-tools/">.Net Tools</a>
+    	    </li>
+        
+    	    <li id="ctl00_RightColumn_Categories1_repCategories_ctl07_CategoryListItem">
+  	        <a id="ctl00_RightColumn_Categories1_repCategories_ctl07_lnkCategory" href="https://www.simple-talk.com/dotnet/editors-corner/">Editor's Corner</a>
+    	    </li>
+        
+    </ul>
+  </div>
+</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+<div class="widget-new hidden" id="RSSfeedwidget">
+  <h2>Custom RSS feeds</h2>
+  <div class="widget-new-body">
+    <div class="rss-inputs">
+      <input type="checkbox" name="rss" id="sqlFeed" value="2" checked="checked"><label for="sqlFeed">SQL</label><br>
+      <input type="checkbox" name="rss" id="netFeed" value="3" checked="checked"><label for="netFeed">.NET</label><br>
+      <input type="checkbox" name="rss" id="exchangeFeed" value="31" checked="checked"><label for="exchangeFeed">SysAdmin</label><br>
+      <input type="checkbox" name="rss" id="opinionFeed" value="4" checked="checked"><label for="opinionFeed">Opinion</label><br>
+      <input type="checkbox" name="rss" id="booksFeed" value="35" checked="checked"><label for="booksFeed">Books</label><br>
+      <input type="checkbox" name="rss" id="blogsFeed" value="B" checked="checked"><label for="blogsFeed">Blogs</label><br>                
+      <p>
+        <a id="rssGetLink" href="https://www.simple-talk.com/rss.aspx" onclick="RssGetSide(false); return(false);" class="btn">Get my feed</a>
+      </p>
+    </div>
+    <div class="rss-buttons">
+      <div class="rss-advanced">
+        If you update your feed, please remember to tell your RSS reader the new URL
+        <br><br>
+        <a id="rssAdvLink" href="https://www.simple-talk.com/rsssel.aspx" onclick="RssGetSide(true); return(false);">Click here for <b>advanced</b> RSS options</a>
+      </div>
+    </div>
+  </div>
+</div>      
+  
+  
+  
+  
+<div class="widget-new">
+  <h2><a id="ctl00_RightColumn_ArticlesRated1_lnkHeader">Top Rated</a></h2>
+  <div class="widget-new-body">
+    
+        <strong><a id="ctl00_RightColumn_ArticlesRated1_repArticles_ctl00_lnkArticle1" href="https://www.simple-talk.com/dotnet/.net-framework/quick-and-dirty-web-data-binding/">Quick and Dirty Web Data-Binding</a></strong><br>
+        <img src="./First Steps with .NET Reflector_files/w_icon_article_9x11.jpg" alt="" width="9" height="11">&nbsp;Sometimes, the sheer byzantine complexity of the typical JavaScript frameworks underlying a typical ...&nbsp;<a id="ctl00_RightColumn_ArticlesRated1_repArticles_ctl00_lnkArticle2" href="https://www.simple-talk.com/dotnet/.net-framework/quick-and-dirty-web-data-binding/">Read more...</a><br><br>
+      
+        <strong><a id="ctl00_RightColumn_ArticlesRated1_repArticles_ctl01_lnkArticle1" href="https://www.simple-talk.com/dotnet/.net-framework/rethinking-the-practicalities-of-recursion/">Rethinking the Practicalities of Recursion</a></strong><br>
+        <img src="./First Steps with .NET Reflector_files/w_icon_article_9x11.jpg" alt="" width="9" height="11">&nbsp;We all love recursion right up to the point of actually using it in production code. Why?  Recursion...&nbsp;<a id="ctl00_RightColumn_ArticlesRated1_repArticles_ctl01_lnkArticle2" href="https://www.simple-talk.com/dotnet/.net-framework/rethinking-the-practicalities-of-recursion/">Read more...</a><br><br>
+      
+        <strong><a id="ctl00_RightColumn_ArticlesRated1_repArticles_ctl02_lnkArticle1" href="https://www.simple-talk.com/dotnet/.net-tools/acceptance-testing-with-fitnesse-multiplicities-and-comparisons/">Acceptance Testing with FitNesse: Multiplicities and Comparisons</a></strong><br>
+        <img src="./First Steps with .NET Reflector_files/w_icon_article_9x11.jpg" alt="" width="9" height="11">&nbsp;FitNesse is one of the most popular tools for unit testing since it is designed with a Wiki-style...&nbsp;<a id="ctl00_RightColumn_ArticlesRated1_repArticles_ctl02_lnkArticle2" href="https://www.simple-talk.com/dotnet/.net-tools/acceptance-testing-with-fitnesse-multiplicities-and-comparisons/">Read more...</a><br><br>
+      
+        <strong><a id="ctl00_RightColumn_ArticlesRated1_repArticles_ctl03_lnkArticle1" href="https://www.simple-talk.com/dotnet/.net-tools/acceptance-testing-with-fitnesse-documentation-and-infrastructure/">Acceptance Testing with FitNesse: Documentation and Infrastructure</a></strong><br>
+        <img src="./First Steps with .NET Reflector_files/w_icon_article_9x11.jpg" alt="" width="9" height="11">&nbsp;FitNesse is a popular general-purpose  wiki-based framework for writing acceptance tests for software...&nbsp;<a id="ctl00_RightColumn_ArticlesRated1_repArticles_ctl03_lnkArticle2" href="https://www.simple-talk.com/dotnet/.net-tools/acceptance-testing-with-fitnesse-documentation-and-infrastructure/">Read more...</a><br><br>
+      
+        <strong><a id="ctl00_RightColumn_ArticlesRated1_repArticles_ctl04_lnkArticle1" href="https://www.simple-talk.com/dotnet/.net-tools/prototyping-desktop-deblector/">Prototyping Desktop Deblector</a></strong><br>
+        <img src="./First Steps with .NET Reflector_files/w_icon_article_9x11.jpg" alt="" width="9" height="11">&nbsp;Deblector is an open-source debugging add-in for .NET Reflector; the Reflector team investigated...&nbsp;<a id="ctl00_RightColumn_ArticlesRated1_repArticles_ctl04_lnkArticle2" href="https://www.simple-talk.com/dotnet/.net-tools/prototyping-desktop-deblector/">Read more...</a><br><br>
+      
+  </div>
+</div>
+  
+
+<div class="widget-new" id="mostviewed">
+  <h2>Most Viewed</h2>
+  <div class="widget-new-body">
+  
+      <strong><a id="ctl00_RightColumn_ArticlesViewed1_repArticles_ctl00_lnkArticle1" href="https://www.simple-talk.com/dotnet/asp.net/a-complete-url-rewriting-solution-for-asp.net-2.0/">A Complete URL Rewriting Solution for ASP.NET 2.0</a></strong><br>
+      <img src="./First Steps with .NET Reflector_files/w_icon_article_9x11.jpg" alt="" width="9" height="11">&nbsp;Ever wondered whether it's possible to create neater URLS, free of bulky Query String parameters?...&nbsp;<a id="ctl00_RightColumn_ArticlesViewed1_repArticles_ctl00_lnkArticle2" href="https://www.simple-talk.com/dotnet/asp.net/a-complete-url-rewriting-solution-for-asp.net-2.0/">Read more...</a><br><br>
+    
+      <strong><a id="ctl00_RightColumn_ArticlesViewed1_repArticles_ctl01_lnkArticle1" href="https://www.simple-talk.com/dotnet/visual-studio/visual-studio-setup---projects-and-custom-actions/">Visual Studio Setup - projects and custom actions</a></strong><br>
+      <img src="./First Steps with .NET Reflector_files/w_icon_article_9x11.jpg" alt="" width="9" height="11">&nbsp;This article describes the kinds of custom actions that can be used in your Visual Studio setup project.&nbsp;<a id="ctl00_RightColumn_ArticlesViewed1_repArticles_ctl01_lnkArticle2" href="https://www.simple-talk.com/dotnet/visual-studio/visual-studio-setup---projects-and-custom-actions/">Read more...</a><br><br>
+    
+      <strong><a id="ctl00_RightColumn_ArticlesViewed1_repArticles_ctl02_lnkArticle1" href="https://www.simple-talk.com/dotnet/.net-framework/.net-application-architecture-the-data-access-layer/">.NET Application Architecture: the Data Access Layer</a></strong><br>
+      <img src="./First Steps with .NET Reflector_files/w_icon_article_9x11.jpg" alt="" width="9" height="11">&nbsp;Find out how to design a robust data access layer for your .NET applications.&nbsp;<a id="ctl00_RightColumn_ArticlesViewed1_repArticles_ctl02_lnkArticle2" href="https://www.simple-talk.com/dotnet/.net-framework/.net-application-architecture-the-data-access-layer/">Read more...</a><br><br>
+    
+      <strong><a id="ctl00_RightColumn_ArticlesViewed1_repArticles_ctl03_lnkArticle1" href="https://www.simple-talk.com/dotnet/asp.net/calling-cross-domain-web-services-in-ajax/">Calling Cross Domain Web Services in AJAX</a></strong><br>
+      <img src="./First Steps with .NET Reflector_files/w_icon_article_9x11.jpg" alt="" width="9" height="11">&nbsp;The latest craze for mashups involves making cross-domain calls to Web Services from APIs made publicly...&nbsp;<a id="ctl00_RightColumn_ArticlesViewed1_repArticles_ctl03_lnkArticle2" href="https://www.simple-talk.com/dotnet/asp.net/calling-cross-domain-web-services-in-ajax/">Read more...</a><br><br>
+    
+      <strong><a id="ctl00_RightColumn_ArticlesViewed1_repArticles_ctl04_lnkArticle1" href="https://www.simple-talk.com/dotnet/visual-studio/build-and-deploy-a-.net-com-assembly/">Build and Deploy a .NET COM Assembly</a></strong><br>
+      <img src="./First Steps with .NET Reflector_files/w_icon_article_9x11.jpg" alt="" width="9" height="11">&nbsp;Phil Wilson demonstrates how to build and deploy a .NET COM assembly using best practices, and how to...&nbsp;<a id="ctl00_RightColumn_ArticlesViewed1_repArticles_ctl04_lnkArticle2" href="https://www.simple-talk.com/dotnet/visual-studio/build-and-deploy-a-.net-com-assembly/">Read more...</a><br><br>
+    
+  </div>
+</div>
+  
+
+<div class="widget-new" id="whyjoin">
+  
+      <h2>Why Join</h2>
+      <div class="widget-new-body">
+	      <p>
+	        Over 400,000 Microsoft professionals subscribe to the Simple-Talk technical journal. Join today, it's fast, simple, free and secure.
+	      </p>
+		    <div class="joinbutton">
+		      <a href="https://www.simple-talk.com/community/user/CreateUser.aspx?ReturnUrl=%2fdotnet%2f.net-tools%2ffirst-steps-with-.net-reflector%2f" class="btn">
+            Join Simple-Talk!
+          </a>
+		    </div>
+      </div>
+    
+</div>
+
+        <div class="clear"></div><br>
+      </div>
+      <div class="clear"></div><br>
+      
+
+<div class="pagefooter nav">
+  <div class="red-gate-logo">
+	  <a href="http://www.red-gate.com/?utm_source=simpletalk&utm_medium=textad&utm_campaign=homepage&__hstc=81186632.97181da5c24da50638a0380e1cf1713a.1423585373633.1423585373633.1423585373633.1&__hssc=81186632.1.1423585373634&__hsfp=1958534040">
+	  	<img src="./First Steps with .NET Reflector_files/red-gate-logo-footer.png" class="red-gate-logo-footer-image" alt="Redgate">
+	  </a>
+  </div>
+  <ul class="footer-nav">
+    <li>
+      <a id="ctl00_ctl02_lnkGotoAbout" href="https://www.simple-talk.com/about.aspx">About</a>
+    </li>
+    <li>
+      <a id="ctl00_ctl02_lnkGotoSitemap" href="https://www.simple-talk.com/site-map.aspx">Site map</a>
+    </li>
+    <li>
+      <a id="ctl00_ctl02_lnkGotoAuthor" href="https://www.simple-talk.com/become-an-author.aspx">Become an author</a>
+    </li>
+    <li>
+      <a id="ctl00_ctl02_lnkGotoArchive" href="https://www.simple-talk.com/newsletter-archive/">Newsletters</a>
+    </li>
+    <li>
+      <a id="ctl00_ctl02_lnkGotoContact" href="https://www.simple-talk.com/contact-us.aspx">Contact us</a>
+    </li>
+    <li>
+      <a href="https://www.simple-talk.com/community/languages/en-US/docs/faq.aspx">Help</a>
+    </li>
+  </ul>
+
+  <ul class="footer-legal-nav">
+    <li>
+      <a id="ctl00_ctl02_lnkGotoPrivacy" href="https://www.simple-talk.com/privacy-policy.aspx">Privacy policy</a>
+    </li>
+    <li>
+      <a id="ctl00_ctl02_lnkGotoTerms" href="https://www.simple-talk.com/terms-and-conditions.aspx">Terms and conditions</a>
+    </li>
+    <li>
+      <a href="http://www.red-gate.com/?__hstc=81186632.97181da5c24da50638a0380e1cf1713a.1423585373633.1423585373633.1423585373633.1&__hssc=81186632.1.1423585373634&__hsfp=1958534040" target="_blank">©2005-2015 Red Gate Software Ltd</a>
+    </li>
+  </ul>
+</div>
+    </div>
+  </div>
+<script type="text/javascript">
+/* <![CDATA[ */
+    var google_conversion_id = 1072726260;
+    var google_conversion_language = "en";
+    var google_conversion_format = "3";
+    var google_conversion_color = "ffffff";
+    var google_conversion_label = "kOZ_CJS21AIQ9IHC_wM";
+    var google_conversion_value = 0;
+/* ]]> */
+</script>
+
+<script type="text/javascript" src="./First Steps with .NET Reflector_files/conversion.js">
+</script><img height="1" width="1" border="0" alt="" src="./First Steps with .NET Reflector_files/saved_resource">
+<noscript>
+&lt;div style="display:inline;"&gt;
+&lt;img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/1072726260/?label=kOZ_CJS21AIQ9IHC_wM&amp;amp;guid=ON&amp;amp;script=0"/&gt;
+&lt;/div&gt;
+</noscript>
+
+
+
+<script data-main="/static/versioned/3e62335f7e28118064c631b9a3a32e46/js/main.js" src="./First Steps with .NET Reflector_files/require-2.1.9(1).js"></script> 
+<script src="./First Steps with .NET Reflector_files/retina-1.1.0.js"></script>
+
+
+<div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; top: -9999px; z-index: 100000;"><iframe id="_atssh208" title="AddThis utility frame" src="./First Steps with .NET Reflector_files/sh189.html" style="height: 1px; width: 1px; position: absolute; top: 0px; z-index: 100000; border: 0px; left: 0px;"></iframe></div><script type="text/javascript" src="./First Steps with .NET Reflector_files/core185.js"></script><iframe name="oauth2relay511650074" id="oauth2relay511650074" src="./First Steps with .NET Reflector_files/postmessageRelay.html" tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe></body></html>
